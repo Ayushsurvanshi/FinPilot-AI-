@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useState, useRef, useEffect, useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { askFinancialQuestion } from "@/app/qa/actions";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,7 @@ function SubmitButton() {
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [state, formAction] = useFormState(askFinancialQuestion, initialState);
+  const [state, formAction] = useActionState(askFinancialQuestion, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 

@@ -1,12 +1,12 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { processVoiceQuery } from "@/app/voice/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Mic, Loader2, Send, Bot, User, Play, Square } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +36,7 @@ function SubmitButton() {
 }
 
 export default function VoiceAssistant() {
-  const [state, formAction] = useFormState(processVoiceQuery, initialState);
+  const [state, formAction] = useActionState(processVoiceQuery, initialState);
   const [messages, setMessages] = useState<Message[]>([]);
   const formRef = useRef<HTMLFormElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);

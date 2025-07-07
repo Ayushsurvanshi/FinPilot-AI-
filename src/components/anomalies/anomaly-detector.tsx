@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
+import { useActionState } from "react";
 import { checkForAnomalies } from "@/app/anomalies/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -48,7 +49,7 @@ function SubmitButton() {
 }
 
 export default function AnomalyDetector() {
-  const [state, formAction] = useFormState(checkForAnomalies, initialState);
+  const [state, formAction] = useActionState(checkForAnomalies, initialState);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
