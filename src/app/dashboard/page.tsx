@@ -98,7 +98,7 @@ export default function DashboardPage() {
             <Zap className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-             <div className="text-sm font-semibold text-primary-foreground/90">Consider rebalancing your portfolio to optimize tax savings.</div>
+             <div className="text-sm font-semibold text-primary">Consider rebalancing your portfolio to optimize tax savings.</div>
           </CardContent>
         </Card>
       </div>
@@ -202,7 +202,7 @@ export default function DashboardPage() {
                               </TableCell>
                               <TableCell className="text-center">
                                   <Badge variant={tx.status === 'Completed' || tx.status === 'Processed' ? 'default' : 'secondary'}
-                                    className={`${tx.status === 'Completed' || tx.status === 'Processed' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}
+                                    className={`${tx.status === 'Completed' || tx.status === 'Processed' ? 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300' : 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300'}`}
                                   >
                                       {tx.status}
                                   </Badge>
